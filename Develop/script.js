@@ -33,6 +33,7 @@ function generatePassword() {
   passwordLength = prompt("Choose between 8 and 128 characters for your password");
   console.log("Password length " + passwordLength);
 
+// a for/while loop instead of an if statement here would have been more valid but I struggled figuring out how to do it properly
 if (!passwordLength) {
   alert("");
 } else if (passwordLength < 8 || passwordLength > 128) {
@@ -52,12 +53,12 @@ if (!passwordLength) {
 if (!confirmLow && !confirmUp && !confirmSpec && !confirmNum) {
   userChoices = alert("You must select the proper criteria.");
 }
-// All options confirmed
+// All options true
 else if (confirmLow && confirmUp && confirmNum && confirmSpec) {
   userChoices = lowercase.concat(upperCase, numbers, special);
   console.log(userChoices);
 }
-// three options confirmed
+// three options true
 else if (confirmLow && confirmUp && confirmNum) {
   userChoices = lowercase.concat(upperCase, numbers);
   console.log(userChoices);
@@ -71,7 +72,7 @@ else if (confirmLow && confirmUp && confirmNum) {
   userChoices = uppercase.concat(numbers, special);
   console.log(userChoices);
 }
-// two options confirmed
+// two options true
 else if (confirmLow && confirmUp) {
   userChoices = lowercase.concat(upperCase);
   console.log(userChoices);
@@ -91,7 +92,7 @@ else if (confirmLow && confirmUp) {
   userChoices = special.concat(numbers);
   console.log(userChoices);
 }
-// one option confirmed
+// one option true
 else if (confirmLow) {
   userChoices = lowercase;
   console.log(userChoices);
